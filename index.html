@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bate-papo</title>
+  </head>
+  <body>
+    <ul id="mensagens"></ul>
+    <form id="form" action="">
+      <input id="input" />
+      <button>Enviar</button>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+
+      var form = document.getElementById("form");
+      var input = document.getElementById("input");
+      var mensagens = document.getElementById("mensagens");
+
+      // adiciona um "event listener" para enviar a mensagem ao clicar no botão de envio do formulário
+      // envia apenas mensagens com conteudo, e após enviar limpa o campo de texto para que seja digitada uma nova mensagem
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (input.value) {
+          socket.emit("mensagem", input.value);
+          input.value = "";
+        }
+      });
+
+      // configuração do socket para adicionar a nova mensagem emitida via socket ao html, criando a nova mensagem na tela
+      socket.on("mensagem", function (mensagem) {
+        var novaMensagem = document.createElement("li");
+        novaMensagem.textContent = mensagem;
+        mensagens.appendChild(novaMensagem);
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+    </script>
+  </body>
+</html>

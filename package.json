@@ -1,0 +1,12 @@
+{
+  "name": "aplicacao-socket-chat",
+  "version": "1.0.0",
+  "description": "Aplicação socket para disciplina de Fundamentos de Redes, segundo semestre de 2022",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.1.2"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
