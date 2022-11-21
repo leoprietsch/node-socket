@@ -1,7 +1,7 @@
 {
-  "name": "aplicacao-socket-chat",
+  "name": "bate-papo-socket",
   "version": "1.0.0",
-  "description": "Aplicação socket para disciplina de Fundamentos de Redes, segundo semestre de 2022",
+  "description": "Aplicação de bate-papo com socket para disciplina de Fundamentos de Redes de Computadores, segundo semestre de 2022",
   "dependencies": {
     "express": "^4.17.1",
     "socket.io": "^4.1.2"

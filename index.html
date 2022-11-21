@@ -4,12 +4,16 @@
     <title>Bate-papo</title>
   </head>
   <body>
+    <!-- Listagem das mensagens -->
     <ul id="mensagens"></ul>
+    <!-- Formulário com campo de texto e botão de enviar mensagem -->
     <form id="form" action="">
       <input id="input" />
       <button>Enviar</button>
     </form>
+    <!-- script necessário para o Socket.io -->
     <script src="/socket.io/socket.io.js"></script>
+    <!-- script de configuração de emissão de evento para os clientes -->
     <script>
       var socket = io();
 
